@@ -37,6 +37,8 @@ public class PlayerControllerX : MonoBehaviour
             transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime * verticalInput);
 
             Debug.Log("Griep");
+
+            Debug.Log("Griepje");
         }
     }
 
