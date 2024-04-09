@@ -35,6 +35,8 @@ public class PlayerControllerX : MonoBehaviour
             distance = transform.position.z;
             // tilt the plane up/down based on up/down arrow keys
             transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime * verticalInput);
+
+            Debug.Log("Griepje");
         }
     }
 
