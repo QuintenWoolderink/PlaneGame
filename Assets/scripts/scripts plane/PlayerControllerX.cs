@@ -1,4 +1,5 @@
-﻿using NUnit.Framework.Internal.Commands;
+﻿using Microsoft.Win32.SafeHandles;
+using NUnit.Framework.Internal.Commands;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,11 +15,8 @@ public class PlayerControllerX : MonoBehaviour
     public bool collision = false;
     public VisualEffect explosion;
     public float distance = 0;
+    public AudioSource soundEffect;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
@@ -46,10 +44,10 @@ public class PlayerControllerX : MonoBehaviour
         if (obstacle != null)
         {
             explosion.Play();
+            soundEffect.Play();
             Debug.Log("You died!");
             Rigidbody rigidBody = GetComponent<Rigidbody>();
             rigidBody.useGravity = true;
-
             this.collision = true;
         }
     }
