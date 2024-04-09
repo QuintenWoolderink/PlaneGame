@@ -6,15 +6,6 @@ public class BackgroundMusic : MonoBehaviour
 {
     public AudioSource backgroundSound;
 
-    void Start()
-    {
-
-    }
-    void Update()
-    {
-        
-    }
-
     public void playThisSoundEffect()
     {
         backgroundSound.Play();
