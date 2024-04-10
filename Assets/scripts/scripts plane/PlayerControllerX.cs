@@ -21,8 +21,11 @@ public class PlayerControllerX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // get the user's vertical input
-        verticalInput = Input.GetAxis("Vertical");
+        // get the user's vertical input 
+        if (!Application.isMobilePlatform || !Application.isEditor)
+        {
+            verticalInput = Input.GetAxis("Vertical");
+        }
 
         if (collision)
         {
