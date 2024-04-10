@@ -22,7 +22,7 @@ public class PlayerControllerX : MonoBehaviour
     void Update()
     {
         // get the user's vertical input 
-        if (!Application.isMobilePlatform || !Application.isEditor)
+        if (!Application.isMobilePlatform)
         {
             verticalInput = Input.GetAxis("Vertical");
         }
