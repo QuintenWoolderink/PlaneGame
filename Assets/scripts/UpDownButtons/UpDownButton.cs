@@ -21,7 +21,7 @@ public class UpDownButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     void Start()
     {
 
-        this.gameObject.SetActive(Application.isMobilePlatform || Application.isEditor);
+        this.gameObject.SetActive(Application.isMobilePlatform);
     }
 
     public void OnPointerDown(PointerEventData eventData)
