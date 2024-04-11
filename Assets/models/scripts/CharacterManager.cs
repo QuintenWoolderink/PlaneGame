@@ -5,14 +5,21 @@ using UnityEngine.UI;
 
 public class CharacterManager : MonoBehaviour
 {
+    public static CharacterManager instance;
+
     public CharacterDatabasebase characterDB;
     public Text nameText;
-    public SpriteRenderer artworkSprite;
+    public GameObject characterModel;
     private int selectedOption = 0;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
-        UpdateCharacter(selectedOption);
+        //UpdateCharacter(selectedOption);
     }
 
     public void NextOption()
@@ -41,7 +48,15 @@ public class CharacterManager : MonoBehaviour
     private void UpdateCharacter(int selectedOption)
     {
         Character character = characterDB.GetCharacter(selectedOption);
-        artworkSprite.sprite = character.characterSprite;
+        
+        if (character != null)
+        {
+            var position = characterModel.transform.position;
+            var rotation = characterModel.transform.rotation;
+            Destroy(characterModel);
+            characterModel = Instantiate(character.characterModel, position, rotation);
+        }
+
         nameText.text = character.characterName;
     }
 }

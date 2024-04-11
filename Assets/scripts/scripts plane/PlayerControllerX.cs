@@ -8,7 +8,6 @@ using UnityEngine.VFX;
 public class PlayerControllerX : MonoBehaviour
 {
 
-    public deathScreen deathScreen;
     public float speed;
     public float rotationSpeed;
     public float verticalInput;
@@ -29,7 +28,7 @@ public class PlayerControllerX : MonoBehaviour
 
         if (collision)
         {
-            deathScreen.Show();
+            deathScreen.instance.Show();
         }
         else {
             // move the plane forward at a constant rate
