@@ -6,35 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
     public bool isPaused;
 
     
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(isPaused)
-            {
-                PlayGame();
-            }
-
-            else
-            {
-                PauseGame();
-            }
-        }
-    }
+    
 
     public void Hide()
     {
 
-        pauseMenu.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void Show()
     {
-        pauseMenu.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public void PauseGame()

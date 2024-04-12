@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ab4b28e965e6d4394d776ac48883a3, type: 3}
+  m_Name: New Character Databasebase
+  m_EditorClassIdentifier: 
+  character:
+  - characterName: StandardPlane
+    characterModel: {fileID: 387778685609721885, guid: 34a4d085cacbb4e408496c727c94e970,
+      type: 3}
+    CharacterThumbnail: {fileID: 21300000, guid: 6f8ced23509cdb34aae93b0c21f6460c,
+      type: 3}
+  - characterName: UFO
+    characterModel: {fileID: 7191878595559626655, guid: 799fdd67c835c684da10c646185dd475,
+      type: 3}
+    CharacterThumbnail: {fileID: 21300000, guid: 2f79c0ed46f17de49a5bf61272bc44b6,
+      type: 3}

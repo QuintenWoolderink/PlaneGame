@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class deathScreen : MonoBehaviour
 {
+    public static deathScreen instance;
+
     public MainMenu mainMenu;
     public GameObject screen;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void Replay()
     {
