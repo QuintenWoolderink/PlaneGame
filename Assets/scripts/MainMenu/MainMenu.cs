@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject mainMenu;
     public Transform spawnPosition;
-    public PlayerControllerX plane;
     public PauseMenu pauseMenu;
+    public PlayerControllerX playerController;
 
 
     private void Start()
@@ -41,23 +40,28 @@ public class MainMenu : MonoBehaviour
 
     public void Hide()
     {
-        mainMenu.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void Show()
     {
-        mainMenu.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public void ResetGame()
     {
-        plane.transform.position = spawnPosition.position;
-        plane.collision = false;
-        Rigidbody rb = plane.GetComponent<Rigidbody>();
+        var planeModel = playerController.transform.GetChild(0);
+        playerController.transform.position = spawnPosition.position;
+        playerController.transform.rotation = spawnPosition.rotation;
+        planeModel.transform.position = Vector3.zero;
+        planeModel.transform.rotation = Quaternion.identity;
+
+        playerController.collision = false;
+        Rigidbody rb = playerController.GetComponentInChildren<Rigidbody>();
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-        plane.verticalInput = 0;
-        plane.transform.rotation = Quaternion.identity;
+        playerController.verticalInput = 0;
+        playerController.transform.rotation = Quaternion.identity;
     }
 }

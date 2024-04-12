@@ -9,7 +9,7 @@ public class CharacterManager : MonoBehaviour
 
     public CharacterDatabasebase characterDB;
     public Text nameText;
-    public GameObject characterModel;
+    public Transform player;
     private int selectedOption = 0;
 
     private void Awake()
@@ -51,10 +51,15 @@ public class CharacterManager : MonoBehaviour
         
         if (character != null)
         {
-            var position = characterModel.transform.position;
-            var rotation = characterModel.transform.rotation;
-            Destroy(characterModel);
-            characterModel = Instantiate(character.characterModel, position, rotation);
+            
+            //destroy children of character model
+            foreach(Transform child in player)
+            {
+                Destroy(child.gameObject);
+            }
+            var characterModel = Instantiate(character.characterModel);
+            characterModel.transform.SetParent(player.transform, false);
+            
         }
 
         nameText.text = character.characterName;

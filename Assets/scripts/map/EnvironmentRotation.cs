@@ -16,6 +16,10 @@ public class EnvironmentRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(player == null)
+        {
+            player = FindAnyObjectByType<PlayerControllerX>().gameObject;
+        }
         transform.position = player.transform.position;
         transform.localEulerAngles += new Vector3(0, RotationSpeed, 0);
     }
